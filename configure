@@ -775,15 +775,15 @@ int main(int argc, char** argv) {
 ##########################
 
 if [ -z "${CC}" ] ; then
-    CC=cc
+    CC=c++
     ${CC} ${TMPCPROGC} ${OSCFLAGS} -o ${TMPCPROGB} 2>>/dev/null
 	ER=$?
 	if ! [ ${ER} -eq 0 ] ; then
-		CC=gcc
+		CC=g++
     	${CC} ${TMPCPROGC} ${OSCFLAGS} -o ${TMPCPROGB} 2>>/dev/null
 		ER=$?
 		if ! [ ${ER} -eq 0 ] ; then
-			CC=clang
+			CC=clang++
     		${CC} ${TMPCPROGC} ${OSCFLAGS} -o ${TMPCPROGB} 2>>/dev/null
 			ER=$?
 			if ! [ ${ER} -eq 0 ] ; then
